@@ -1,12 +1,42 @@
+import enum;
+
+
 class Character(object):
-	def __init__(self, name, health, power, defense, moveSet):
+	def __init__(self, name, health, attack, defense, moveSet):
 		self.name = name
 		self.health = health
-		self.power = power
+		self.attack = attack
 		self.defense = defense
 		self.moveSet = moveSet
 		self.status = 'Null'
 
+#Enum for buff types
+#There is an enum module for python, but this is a quicker and "pythonic" way of achieving the same effect
+class Buff_Type:
+	apIncrease, defIncrease, hot, inst_heal, brace, crosshairs = range(6)
+
+class Debuff_Type:
+	apDecrease, defDecrease, reflect, root, dot = range(5)
+
+#Move Types (Classes as of now; will look into structs when refactoring)
+class Offensive(object):
+	  def __init__(self, baseDamage, critChance, missChance):
+		  self.baseDamage = baseDamage
+		  self.critChance = critChance
+		  self.missChance = missChance
+
+class Defensive(object):
+	def __init__(self, effect, upPercentage):
+		self.effect = effect
+		self.upPercentage = upPercentage
+
+class Buff(object):
+	def __init__(self, effect):
+		self.effect = effect
+
+class Debuff(object):
+	def __init__(self, sideEffect):
+		self.sideEffect = sideEffect
 
 class Move(object):
 	def __init__(self, name, atk, acc, statEffect):
@@ -14,6 +44,10 @@ class Move(object):
 		self.atk = atk
 		self.acc = acc
 
+"""
+	We need to modify the declarations below; I also need to research how to instantiate enum values in the constructor
+	and verify that it works in the object
+"""
 #spongebob
 moves = [Move('Patty Flip', 75, 50, 'Burn'), Move('Jelly Catch', 80, 40, 'Root'), Move('Bubbles', 100, 25, 'Blind'), Move('Inflate Arms', 0, 0, 'State Change')]
 sponge = Character('Spongebob Squarepants', 300, 50, 100, moves)
