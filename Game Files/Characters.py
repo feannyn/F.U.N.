@@ -1,6 +1,6 @@
 import enum;
 
-
+#tristan was here
 class Character(object):
 	def __init__(self, name, health, attack, defense, moveSet):
 		self.name = name
