@@ -13,6 +13,8 @@ background.fill(bgcolor)
 
 background = background.convert()
 
+pygame.draw.rect(background, (255,255,255), (530,5,300,150))
+
 gameDisplay.blit(background, (0, 0))
 
 pygame.display.set_caption('F.U.N.')
