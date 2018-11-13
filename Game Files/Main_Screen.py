@@ -7,7 +7,6 @@ curScreen = 'main_menu'
 # setting up background
 size = width, height = 1360, 768
 gameDisplay = pygame.display.set_mode(size)
-<<<<<<< HEAD
 #background = pygame.Surface(gameDisplay.get_size())
 
 #background.fill(bgcolor)
@@ -31,7 +30,6 @@ quit = pygame.transform.scale(quit, (500, 200))
 gameDisplay.blit(play, (10, 10))
 gameDisplay.blit(info, (10, 210))
 gameDisplay.blit(quit, (10, 410))
-=======
 prettyBackground = pygame.image.load("bg.jpg")
 prettyBackground = pygame.transform.scale(prettyBackground, (1360, 768))
 gameDisplay.blit(prettyBackground, (0, 0))
@@ -50,7 +48,6 @@ gameDisplay.blit(quit, (10, 410))
 pygame.display.set_caption('F.U.N.')
 
 theme = pygame.mixer.Sound("themesong.wav")
->>>>>>> Luiz-Testing
 
 theme.play(-1)
 
@@ -103,7 +100,6 @@ def blitYQuit():
 
 
 def blitMain():
-    curScreen = 'main_menu'
     play = pygame.image.load("play.png")
     info = pygame.image.load("info.png")
     quit = pygame.image.load("quit.png")
@@ -127,11 +123,14 @@ def checkMain(mouseLoc):
         blitMain()
 
 while playing:
+    curScreen = 'main_menu'
     mouse_loc = pygame.mouse.get_pos()
     for _ in pygame.event.get():
         if _.type == pygame.MOUSEBUTTONDOWN:
             if 450 > mouse_loc[0] > 100 and 200 > mouse_loc[1] > 30:
                 curScreen = 'character_select'
+            elif 387 > mouse_loc[0] > 67 and 375 > mouse_loc[1] > 150:
+                curScreen = 'character_info'
             elif 387 > mouse_loc[0] > 67 and 565 > mouse_loc[1] > 415:
                 playing = False
                 break
