@@ -102,6 +102,9 @@ while playing:
         if _.type == pygame.MOUSEBUTTONDOWN:
             if 450 > mouse_loc[0] > 100 and 200 > mouse_loc[1] > 30:
                 curScreen = 'character_select'
+            elif 387 > mouse_loc[0] > 67 and 565 > mouse_loc[1] > 415:
+                playing = False
+                break
         elif _.type == pygame.QUIT:
             playing = False
             break
