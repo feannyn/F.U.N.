@@ -125,6 +125,9 @@ while playing:
         if _.type == pygame.MOUSEBUTTONDOWN:
             if 450 > mouse_loc[0] > 100 and 200 > mouse_loc[1] > 30:
                 curScreen = 'character_select'
+                prettyBackground = pygame.image.load("play.PNG")
+                prettyBackground = pygame.transform.scale(prettyBackground, (1360, 768))
+                gameDisplay.blit(prettyBackground, (0, 0))
             elif 387 > mouse_loc[0] > 67 and 375 > mouse_loc[1] > 150:
                 curScreen = 'character_info'
             elif 387 > mouse_loc[0] > 67 and 565 > mouse_loc[1] > 415:
