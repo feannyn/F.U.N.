@@ -20,7 +20,11 @@ class Debuff_Type:
 
 #Move Types (Classes as of now; will look into structs when refactoring)
 class Offensive(object):
+<<<<<<< HEAD
 		def __init__(self, baseDamage, critChance, missChance):
+=======
+	def __init__(self, baseDamage, critChance, missChance):
+>>>>>>> master
 		self.baseDamage = baseDamage
 		self.critChance = critChance
 		self.missChance = missChance
