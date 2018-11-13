@@ -51,10 +51,6 @@ theme = pygame.mixer.Sound("themesong.wav")
 
 theme.play(-1)
 
-theme = pygame.mixer.Sound("themesong.wav")
-
-theme.play(-1)
-
 pygame.display.init()
 
 playing = True
