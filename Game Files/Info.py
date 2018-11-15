@@ -4,7 +4,7 @@ pygame.display.init()
 
 purple = (150, 0, 150)
 white = (255, 255, 255)
-background_image = pygame.image.load('/Users/nicholasfeanny/Documents/Python/group_Project/F.U.N./Character Images/saltySpitoon.jpg')
+background_image = pygame.image.load('/Character Images/saltySpitoon.jpg')
 
 gameDisplay = pygame.display.set_mode((850, 600))
 gameDisplay.blit(background_image, (0, 0))
