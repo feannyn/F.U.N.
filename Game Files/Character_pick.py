@@ -27,7 +27,7 @@ pygame.draw.polygon(gameDisplay, white, [(450, 375), (500, 450), (600, 450), (65
 pygame.draw.polygon(gameDisplay, purple, [(150, 375), (200, 450), (300, 450), (350, 375), (300, 300), (200, 300)])
 pygame.draw.polygon(gameDisplay, (15, 139, 141), [(300, 450), (350, 525), (450, 525), (500, 450), (450, 375), (350, 375)])
 pygame.draw.polygon(gameDisplay, purple, [(150, 525), (200, 600), (300, 600), (350, 525), (300, 450), (200, 450)])
-pygame.draw.polygon(gameDisplay, white , [(450, 525), (500, 600), (600, 600), (650, 525), (600, 450), (500, 450)])
+pygame.draw.polygon(gameDisplay, white, [(450, 525), (500, 600), (600, 600), (650, 525), (600, 450), (500, 450)])
 pygame.draw.polygon(gameDisplay, purple, [(600, 450), (650, 525), (750, 525), (795, 450), (750, 375), (650, 375)])
 pygame.draw.polygon(gameDisplay, (15,139,141), [(5, 450), (50, 525), (150, 525), (200, 450), (150, 375), (50, 375)])
 
