@@ -8,25 +8,25 @@ white = (255, 255, 255)
 
 #photo variables and modifications
 spongeIMG = pygame.image.load("Character Images/SpongeBobFront.png")
-spongeIMG = pygame.transform.scale(spongeIMG, (150, 150))
+spongeIMG = pygame.transform.scale(spongeIMG, (125, 125))
 
 starIMG = pygame.image.load("Character Images/PatrickFront.png")
-starIMG = pygame.transform.scale(starIMG, (150, 150))
+starIMG = pygame.transform.scale(starIMG, (125, 125))
 
 squirrelIMG = pygame.image.load("Character Images/SandyFront.png")
-squirrelIMG = pygame.transform.scale(squirrelIMG, (150, 150))
+squirrelIMG = pygame.transform.scale(squirrelIMG, (125, 125))
 
 squidIMG = pygame.image.load("Character Images/SquidwardFront.png")
-squidIMG = pygame.transform.scale(squidIMG, (150, 150))
+squidIMG = pygame.transform.scale(squidIMG, (125, 125))
 
 krabIMG = pygame.image.load("Character Images/KrabsFront.png")
-krabIMG = pygame.transform.scale(krabIMG, (150, 150))
+krabIMG = pygame.transform.scale(krabIMG, (125, 125))
 
 planktonIMG = pygame.image.load("Character Images/PlanktonFront.png")
-planktonIMG = pygame.transform.scale(planktonIMG, (150, 150))
+planktonIMG = pygame.transform.scale(planktonIMG, (125, 125))
 
-randomIMG = pygame.image.load()
-
+randomIMG = pygame.image.load("Character Images/random.png")
+randomIMG = pygame.transform.scale(randomIMG, (125, 125))
 
 #Screen set up
 background_image = pygame.image.load("Character Images/saltySpitoon.jpg")

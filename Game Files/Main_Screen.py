@@ -7,23 +7,23 @@ curScreen = 'main_menu'
 # setting up background
 size = width, height = 1360, 768
 gameDisplay = pygame.display.set_mode(size)
-<<<<<<< HEAD
+
 #background = pygame.Surface(gameDisplay.get_size())
 
 #background.fill(bgcolor)
 
 #background = background.convert()
 
-prettyBackground = pygame.image.load("bg.jpg")
+prettyBackground = pygame.image.load("Character Images/bg.jpg")
 prettyBackground = pygame.transform.scale(prettyBackground, (1360, 768))
 
 #pygame.draw.rect(prettyBackground, (255,255,255), (530,5,300,150))
 
 gameDisplay.blit(prettyBackground, (0, 0))
 
-play = pygame.image.load("play.png")
-info = pygame.image.load("info.png")
-quit = pygame.image.load("quit.png")
+play = pygame.image.load("Character Images/play.png")
+info = pygame.image.load("Character Images/info.png")
+quit = pygame.image.load("Character Images/quit.png")
 play = pygame.transform.scale(play, (500, 200))
 info = pygame.transform.scale(info, (500, 200))
 quit = pygame.transform.scale(quit, (500, 200))
@@ -31,15 +31,15 @@ quit = pygame.transform.scale(quit, (500, 200))
 gameDisplay.blit(play, (10, 10))
 gameDisplay.blit(info, (10, 210))
 gameDisplay.blit(quit, (10, 410))
-=======
-prettyBackground = pygame.image.load("bg.jpg")
+
+prettyBackground = pygame.image.load("Character Images/bg.jpg")
 prettyBackground = pygame.transform.scale(prettyBackground, (1360, 768))
 gameDisplay.blit(prettyBackground, (0, 0))
 
 #setting up main menu
-play = pygame.image.load("play.png")
-info = pygame.image.load("info.png")
-quit = pygame.image.load("quit.png")
+play = pygame.image.load("Character Images/play.png")
+info = pygame.image.load("Character Images/info.png")
+quit = pygame.image.load("Character Images/quit.png")
 play = pygame.transform.scale(play, (500, 200))
 info = pygame.transform.scale(info, (500, 200))
 quit = pygame.transform.scale(quit, (500, 200))
@@ -49,12 +49,12 @@ gameDisplay.blit(quit, (10, 410))
 
 pygame.display.set_caption('F.U.N.')
 
-theme = pygame.mixer.Sound("themesong.wav")
->>>>>>> Luiz-Testing
+theme = pygame.mixer.Sound("Character Images/themesong.wav")
+
 
 theme.play(-1)
 
-theme = pygame.mixer.Sound("themesong.wav")
+theme = pygame.mixer.Sound("Character Images/themesong.wav")
 
 theme.play(-1)
 
@@ -65,9 +65,9 @@ playing = True
 
 # defining functions to use during playing loop
 def blitYPlay():
-    play = pygame.image.load("playyellow.png")
-    info = pygame.image.load("info.png")
-    quit = pygame.image.load("quit.png")
+    play = pygame.image.load("Character Images/playyellow.png")
+    info = pygame.image.load("Character Images/info.png")
+    quit = pygame.image.load("Character Images/quit.png")
     play = pygame.transform.scale(play, (500, 200))
     info = pygame.transform.scale(info, (500, 200))
     quit = pygame.transform.scale(quit, (500, 200))
@@ -77,9 +77,9 @@ def blitYPlay():
     gameDisplay.blit(quit, (10, 410))
 
 def blitYInfo():
-    play = pygame.image.load("play.png")
-    info = pygame.image.load("infoyellow.png")
-    quit = pygame.image.load("quit.png")
+    play = pygame.image.load("Character Images/play.png")
+    info = pygame.image.load("Character Images/infoyellow.png")
+    quit = pygame.image.load("Character Images/quit.png")
     play = pygame.transform.scale(play, (500, 200))
     info = pygame.transform.scale(info, (500, 200))
     quit = pygame.transform.scale(quit, (500, 200))
@@ -90,9 +90,9 @@ def blitYInfo():
 
 
 def blitYQuit():
-    play = pygame.image.load("play.png")
-    info = pygame.image.load("info.png")
-    quit = pygame.image.load("quityellow.png")
+    play = pygame.image.load("Character Images/play.png")
+    info = pygame.image.load("Character Images/info.png")
+    quit = pygame.image.load("Character Images/quityellow.png")
     play = pygame.transform.scale(play, (500, 200))
     info = pygame.transform.scale(info, (500, 200))
     quit = pygame.transform.scale(quit, (500, 200))
@@ -104,9 +104,9 @@ def blitYQuit():
 
 def blitMain():
     curScreen = 'main_menu'
-    play = pygame.image.load("play.png")
-    info = pygame.image.load("info.png")
-    quit = pygame.image.load("quit.png")
+    play = pygame.image.load("Character Images/play.png")
+    info = pygame.image.load("Character Images/info.png")
+    quit = pygame.image.load("Character Images/quit.png")
     play = pygame.transform.scale(play, (500, 200))
     info = pygame.transform.scale(info, (500, 200))
     quit = pygame.transform.scale(quit, (500, 200))
