@@ -95,43 +95,32 @@ while playing == True:
                 drawInfoDisplay()
                 gameDisplay.blit(squidIMG, (150, 100))
                 pygame.display.update()
-
-                # random button image
-                pass
             elif 200 < mouse_loc[0] < 300 and 300 < mouse_loc[1] < 450:
                 print("button 2!")
                 drawInfoDisplay()
                 gameDisplay.blit(starIMG, (150, 100))
                 pygame.display.update()
-                pass
             elif 350 < mouse_loc[0] < 450 and 375 < mouse_loc[1] < 525:
                 print("button 7!")
-
-                pass
             elif 200 < mouse_loc[0] < 300 and 450 < mouse_loc[1] < 600:
                 print("button 3!")
                 drawInfoDisplay()
                 gameDisplay.blit(spongeIMG, (150, 100))
                 pygame.display.update()
-
-                pass
             elif 500 < mouse_loc[0] < 600 and 450 < mouse_loc[1] < 600:
                 print("button 5!")
                 drawInfoDisplay()
                 gameDisplay.blit(planktonIMG, (150, 100))
                 pygame.display.update()
-                pass
             elif 50 < mouse_loc[0] < 150 and 375 < mouse_loc[1] < 525:
                 print("button 1!")
                 drawInfoDisplay()
                 gameDisplay.blit(squirrelIMG, (150, 100))
                 pygame.display.update()
-                pass
             elif 650 < mouse_loc[0] < 750 and 375 < mouse_loc[1] < 525:
                 print("button 6!")
                 drawInfoDisplay()
                 gameDisplay.blit(krabIMG, (150, 100))
                 pygame.display.update()
-
         if _.type == pygame.QUIT:
             playing = False
