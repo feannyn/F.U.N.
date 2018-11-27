@@ -1,10 +1,14 @@
 import pygame
 
 pygame.display.init()
+pygame.font.init()
 
+myFont = pygame.font.SysFont('Rust', 35)
 purple = (150, 0, 150)
-white = (0, 0, 0)
+white = (255, 255, 255)
+black = (0, 0, 0)
 
+display_text = myFont.render('Select a character for more information', False, black)
 
 #photo variables and modifications
 spongeIMG = pygame.image.load("Character Images/SpongeBobFront.png")
@@ -25,13 +29,33 @@ krabIMG = pygame.transform.scale(krabIMG, (125, 125))
 planktonIMG = pygame.image.load("Character Images/PlanktonFront.png")
 planktonIMG = pygame.transform.scale(planktonIMG, (125, 125))
 
-randomIMG = pygame.image.load("Character Images/random.png")
-randomIMG = pygame.transform.scale(randomIMG, (125, 125))
+backIMG = pygame.image.load("Character Images/back.png")
+backIMG = pygame.transform.scale(backIMG, (30, 30))
 
-#Screen set up
-background_image = pygame.image.load("Character Images/saltySpitoon.jpg")
+sponge2 = pygame.image.load("Character Images/sponge2.jpg")
+sponge2 = pygame.transform.scale(sponge2, (200, 200))
+
+pat2 = pygame.image.load("Character Images/pat2.jpg")
+pat2 = pygame.transform.scale(pat2, (200, 200))
+
+krabs2 = pygame.image.load("Character Images/krabs2.jpg")
+krabs2 = pygame.transform.scale(krabs2, (200, 200))
+
+plank2 = pygame.image.load("Character Images/plankton2.jpg")
+plank2 = pygame.transform.scale(plank2, (200, 200))
+
+sandy2 = pygame.image.load("Character Images/sandy2.jpg")
+sandy2 = pygame.transform.scale(sandy2, (200, 200))
+
+squid2 = pygame.image.load("Character Images/squid2.jpg")
+squid2 = pygame.transform.scale(squid2, (200, 200))
+
+# Screen set up
+background_image = pygame.image.load("Character Images/info_BG.jpg")
 gameDisplay = pygame.display.set_mode((850, 600))
+background_image = pygame.transform.scale(background_image, (850, 600))
 gameDisplay.blit(background_image, (0, 0))
+gameDisplay.blit(display_text, (200, 20))
 
 spongeHex = pygame.draw.polygon(gameDisplay, white, [(450, 375), (500, 450), (600, 450), (650, 375), (600, 300), (500, 300)], 3)
 starHex= pygame.draw.polygon(gameDisplay, purple, [(150, 375), (200, 450), (300, 450), (350, 375), (300, 300), (200, 300)], 3)
@@ -48,11 +72,11 @@ gameDisplay.blit(spongeIMG, (195, 470))
 gameDisplay.blit(squidIMG, (500, 320))
 gameDisplay.blit(planktonIMG, (500, 470))
 gameDisplay.blit(krabIMG, (635, 390))
-gameDisplay.blit(randomIMG, (350, 385))
 
 
 def drawInfoDisplay():
     gameDisplay.blit(background_image, (0, 0))
+    gameDisplay.blit(display_text, (200, 20))
     spongeHex = pygame.draw.polygon(gameDisplay, white, [(450, 375), (500, 450), (600, 450), (650, 375), (600, 300), (500, 300)], 3)
     starHex = pygame.draw.polygon(gameDisplay, purple, [(150, 375), (200, 450), (300, 450), (350, 375), (300, 300), (200, 300)], 3)
     squirrelHex = pygame.draw.polygon(gameDisplay, white, [(300, 450), (350, 525), (450, 525), (500, 450), (450, 375), (350, 375)], 3)
@@ -68,17 +92,11 @@ def drawInfoDisplay():
     gameDisplay.blit(squidIMG, (500, 320))
     gameDisplay.blit(planktonIMG, (500, 470))
     gameDisplay.blit(krabIMG, (635, 390))
-    gameDisplay.blit(randomIMG, (350, 385))
+    gameDisplay.blit(backIMG, (10, 10))
 
-    # Character image and information blocks
-    go_Back = pygame.draw.rect(gameDisplay, purple, (10, 10, 30, 30))
-    character_Img = pygame.draw.rect(gameDisplay, white, (50, 50, 300, 200), 1)
-    character_Stats = pygame.draw.rect(gameDisplay, white, (450, 50, 300, 200), 1)
+# Character image and information blocks
+gameDisplay.blit(backIMG, (10, 10))
 
-#Character image and information blocks
-go_Back = pygame.draw.rect(gameDisplay, purple, (10, 10, 30, 30))
-character_Img = pygame.draw.rect(gameDisplay, white, (50, 50, 300, 200), 1)
-character_Stats = pygame.draw.rect(gameDisplay, white, (450, 50, 300, 200), 1)
 pygame.display.update()
 
 #Screen options
@@ -93,34 +111,40 @@ while playing == True:
             if 500 < mouse_loc[0] < 600 and 300 < mouse_loc[1] < 450:
                 print("button 4!")
                 drawInfoDisplay()
-                gameDisplay.blit(squidIMG, (150, 100))
+                pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
+                gameDisplay.blit(squid2, (250, 75))
                 pygame.display.update()
             elif 200 < mouse_loc[0] < 300 and 300 < mouse_loc[1] < 450:
                 print("button 2!")
                 drawInfoDisplay()
-                gameDisplay.blit(starIMG, (150, 100))
+                pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
+                gameDisplay.blit(pat2, (250, 75))
                 pygame.display.update()
             elif 350 < mouse_loc[0] < 450 and 375 < mouse_loc[1] < 525:
                 print("button 7!")
             elif 200 < mouse_loc[0] < 300 and 450 < mouse_loc[1] < 600:
                 print("button 3!")
                 drawInfoDisplay()
-                gameDisplay.blit(spongeIMG, (150, 100))
+                pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
+                gameDisplay.blit(sponge2, (250, 75))
                 pygame.display.update()
             elif 500 < mouse_loc[0] < 600 and 450 < mouse_loc[1] < 600:
                 print("button 5!")
                 drawInfoDisplay()
-                gameDisplay.blit(planktonIMG, (150, 100))
+                pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
+                gameDisplay.blit(plank2, (250, 75))
                 pygame.display.update()
             elif 50 < mouse_loc[0] < 150 and 375 < mouse_loc[1] < 525:
                 print("button 1!")
                 drawInfoDisplay()
-                gameDisplay.blit(squirrelIMG, (150, 100))
+                pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
+                gameDisplay.blit(sandy2, (250, 75))
                 pygame.display.update()
             elif 650 < mouse_loc[0] < 750 and 375 < mouse_loc[1] < 525:
                 print("button 6!")
                 drawInfoDisplay()
-                gameDisplay.blit(krabIMG, (150, 100))
+                pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
+                gameDisplay.blit(krabs2, (250, 75))
                 pygame.display.update()
         if _.type == pygame.QUIT:
             playing = False
