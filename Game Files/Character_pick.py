@@ -226,6 +226,8 @@ while playing:
                     Finalp2 = str(char2)
                     print("player 2 = ", Finalp2)
                     p2 = True
+            elif 8 < mouse_loc[0] < 40 and 8 < mouse_loc[1] < 40:
+                print("back button!")
 
         if _.type == pygame.QUIT:
             playing = False

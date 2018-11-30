@@ -114,7 +114,7 @@ while playing == True:
                 pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
                 gameDisplay.blit(squid2, (250, 75))
                 pygame.display.update()
-            elif 200 < mouse_loc[0] < 300 and 300 < mouse_loc[1] < 450:
+            elif 200 < mouse_loc[0] < 299 and 300 < mouse_loc[1] < 450:
                 print("button 2!")
                 drawInfoDisplay()
                 pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
@@ -146,5 +146,7 @@ while playing == True:
                 pygame.draw.rect(gameDisplay, black, (246, 71, 207, 208), 4)
                 gameDisplay.blit(krabs2, (250, 75))
                 pygame.display.update()
+            elif 8 < mouse_loc[0] < 40 and 8 < mouse_loc[1] < 40:
+                print("back button!")
         if _.type == pygame.QUIT:
             playing = False
