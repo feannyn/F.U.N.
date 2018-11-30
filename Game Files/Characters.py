@@ -1,4 +1,4 @@
-import enum;
+import enum
 
 #tristan was here
 class Character(object):
