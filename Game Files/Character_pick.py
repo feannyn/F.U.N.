@@ -135,6 +135,7 @@ pygame.display.update()
 #Screen options
 playing = True
 p1, p2 = False, False
+global Finalp1, Finalp2
 
 while playing:
     for _ in pygame.event.get():
