@@ -16,21 +16,27 @@ def runInfoScreen():
     # photo variables and modifications
     spongeIMG = pygame.image.load("Character Images/SpongeBobFront.png")
     spongeIMG = pygame.transform.scale(spongeIMG, (125, 125))
+    spongeinfo = pygame.image.load("Character Images/spongeinfo.png")
 
     starIMG = pygame.image.load("Character Images/PatrickFront.png")
     starIMG = pygame.transform.scale(starIMG, (125, 125))
+    patrickinfo = pygame.image.load("Character Images/patrickinfo.png")
 
     squirrelIMG = pygame.image.load("Character Images/SandyFront.png")
     squirrelIMG = pygame.transform.scale(squirrelIMG, (125, 125))
+    sandyinfo = pygame.image.load("Character Images/sandyinfo.png")
 
     squidIMG = pygame.image.load("Character Images/SquidwardFront.png")
     squidIMG = pygame.transform.scale(squidIMG, (125, 125))
+    squidwardinfo = pygame.image.load("Character Images/squidwardinfo.png")
 
     krabIMG = pygame.image.load("Character Images/KrabsFront.png")
     krabIMG = pygame.transform.scale(krabIMG, (125, 125))
+    krabsinfo = pygame.image.load("Character Images/krabsinfo.png")
 
     planktonIMG = pygame.image.load("Character Images/PlanktonFront.png")
     planktonIMG = pygame.transform.scale(planktonIMG, (125, 125))
+    plankinfo = pygame.image.load("Character Images/planktoninfo.png")
 
     backIMG = pygame.image.load("Character Images/back.png")
     backIMG = pygame.transform.scale(backIMG, (30, 30))
@@ -116,23 +122,23 @@ def runInfoScreen():
         gameDisplay.blit(backIMG, (10, 10))
 
         if charChoice == "SQUID":
-            pygame.draw.rect(gameDisplay, black, (495, 80, 207, 208), 4)
-            gameDisplay.blit(squid2, (499, 84))
+            pygame.draw.rect(gameDisplay, black, (435, 80, 207, 208), 4)
+            gameDisplay.blit(squid2, (439, 84))
         elif charChoice == "ST":
-            pygame.draw.rect(gameDisplay, black, (495, 80, 207, 208), 4)
-            gameDisplay.blit(pat2, (499, 84))
+            pygame.draw.rect(gameDisplay, black, (435, 80, 207, 208), 4)
+            gameDisplay.blit(pat2, (439, 84))
         elif charChoice == "SP":
-            pygame.draw.rect(gameDisplay, black, (495, 80, 207, 208), 4)
-            gameDisplay.blit(sponge2, (499, 84))
+            pygame.draw.rect(gameDisplay, black, (435, 80, 207, 208), 4)
+            gameDisplay.blit(sponge2, (439, 84))
         elif charChoice == "SQUIRREL":
-            pygame.draw.rect(gameDisplay, black, (495, 80, 207, 208), 4)
-            gameDisplay.blit(sandy2, (499, 84))
+            pygame.draw.rect(gameDisplay, black, (435, 80, 207, 208), 4)
+            gameDisplay.blit(sandy2, (439, 84))
         elif charChoice == "PL":
-            pygame.draw.rect(gameDisplay, black, (495, 80, 207, 208), 4)
-            gameDisplay.blit(plank2, (499, 84))
+            pygame.draw.rect(gameDisplay, black, (435, 80, 207, 208), 4)
+            gameDisplay.blit(plank2, (439, 84))
         elif charChoice == "KR":
-            pygame.draw.rect(gameDisplay, black, (495, 80, 207, 208), 4)
-            gameDisplay.blit(krabs2, (499, 84))
+            pygame.draw.rect(gameDisplay, black, (435, 80, 207, 208), 4)
+            gameDisplay.blit(krabs2, (439, 84))
         pygame.display.update()
 
     def pickChar(mouseLoc):
