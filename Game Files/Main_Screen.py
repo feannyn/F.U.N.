@@ -1,5 +1,6 @@
 import pygame
 import Info
+import Character_pick
 
 # initializing basics
 pygame.init()
@@ -117,7 +118,12 @@ def selectReset(mouseLoc):
 # selections on each screen
 def mainOptions(mouseLoc):
     global curScreen
-    if 387 > mouseLoc[0] > 67 and 375 > mouseLoc[1] > 150:
+    if 450 > mouseLoc[0] > 100 and 200 > mouseLoc[1] > 30:
+        curScreen = "game_play"
+        Character_pick.runCharSelectionScreen()
+        curScreen = "main_menu"
+        return True
+    elif 387 > mouseLoc[0] > 67 and 375 > mouseLoc[1] > 150:
         curScreen = "char_info"
         Info.runInfoScreen()
         curScreen = "main_menu"
