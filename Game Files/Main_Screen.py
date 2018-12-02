@@ -28,7 +28,7 @@ pygame.display.set_caption('F.U.N.')
 
 theme = pygame.mixer.Sound("Character Images/themesong.wav")
 
-# theme.play(-1)
+theme.play(-1)
 
 pygame.display.init()
 
