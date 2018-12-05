@@ -10,15 +10,18 @@ pOneHp = 10
 pTwoHp = 10
 topDamage = 0
 bottomDamage = 0
+winner = 0
+playOne = 10
+playTwo = 10
 
 # font declaration
 def runGameScreen(choiceOne, choiceTwo):
-    global curPlayer, attack2, attack1, attack3, attack4, pOneHp, pTwoHp
+    global curPlayer, attack2, attack1, attack3, attack4, pOneHp, pTwoHp, playOne, playTwo
     pygame.font.init()
     myfont = pygame.font.Font('Pokemon GB.ttf', 19)
     smallerFont = pygame.font.Font('Pokemon GB.ttf', 18)
-    playOne = 10
-    playTwo = 10
+    #playOne = 10
+   # playTwo = 10
 
     # color declarations
     white = (255, 255, 255)
@@ -36,7 +39,6 @@ def runGameScreen(choiceOne, choiceTwo):
     plankton = Character("Plankton", 100, ("Robot Slam", 40), ("Chum Bucket", 10), ("Steal", 15), ("Karen", 5), "Character Images/KrabsFront.png", "Character Images/KrabsBack.png")
 
     print(choiceOne)
-    print("hell")
     print(choiceTwo)
     if choiceOne == "squid_char":
         playOne = squidward
@@ -206,7 +208,7 @@ def runGameScreen(choiceOne, choiceTwo):
         pygame.display.update()
 
     def swapTurn(attNum):
-        global curPlayer, attack1, attack2, attack3, attack4, topDamage, bottomDamage
+        global curPlayer, attack1, attack2, attack3, attack4, topDamage, bottomDamage, winner
         if curPlayer == playOne:
             if attNum == 1:
                 topDamage = topDamage + curPlayer.attack1[1]
@@ -235,11 +237,35 @@ def runGameScreen(choiceOne, choiceTwo):
         if topDamage >= 100:
             print("Player One Won")
             return False
+            winner = 0
         elif bottomDamage >= 100:
             print("Player Two Won")
+            winner = 1
             return False
         else:
             return True
+
+    def blitGameOverScreen():
+        global winner, playOne, playTwo
+        bigfont = pygame.font.Font('Pokemon GB.ttf', 40)
+
+        if winner == 0:
+            spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
+            spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
+            screen.blit(spongebobVictory, (0, 0))
+            winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+            screen.blit(winnerTXT, (420, 354))
+        else:
+            spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
+            spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
+            screen.blit(spongebobVictory, (0, 0))
+            winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+            screen.blit(winnerTXT, (420, 354))
+
+        gameOverTXT = bigfont.render('Game over!', False, black)
+        screen.blit(gameOverTXT, (450, 304))
+
+        pygame.display.update()
 
     blitGameScreen()
 
@@ -266,4 +292,9 @@ def runGameScreen(choiceOne, choiceTwo):
                     print("run button!")
             if _.type == pygame.QUIT:
                 playing = False
+    print("game over!")
+
+    blitGameOverScreen()
+
+
 
