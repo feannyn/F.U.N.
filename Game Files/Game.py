@@ -1,6 +1,7 @@
 import pygame
 from Characters import Character
 
+
 curPlayer = 10
 attack1 = 10
 attack2 = 10
@@ -138,7 +139,7 @@ def runGameScreen(choiceOne, choiceTwo):
     attack2 = myfont.render(playOne.attack2[0], False, black)
     attack3 = myfont.render(playOne.attack3[0], False, black)
     attack4 = myfont.render(playOne.attack4[0], False, black)
-    fightTXT = myfont.render('FIGHT', False, black)
+    #fightTXT = myfont.render('FIGHT', False, black)
     runTXT = myfont.render('RUN', False, black)
     topDamage = 0
     bottomDamage = 0
@@ -197,8 +198,8 @@ def runGameScreen(choiceOne, choiceTwo):
             screen.blit(SBfront, (1000, 25))
         elif playTwo == plankton:
             screen.blit(Plankfront, (1000, 25))
-        screen.blit(fightTXT, (1030, 620))
-        screen.blit(runTXT, (1030, 690))
+        #screen.blit(fightTXT, (1030, 620))
+        screen.blit(runTXT, (1030, 650))
         screen.blit(attack1, (150, 620))
         screen.blit(attack2, (150, 690))
         screen.blit(attack3, (450, 620))
@@ -260,10 +261,15 @@ def runGameScreen(choiceOne, choiceTwo):
                 if 440 < mouse_loc[0] < 605 and 680 < mouse_loc[1] < 710:
                     print("attack4!")
                     playing = swapTurn(4)
-                if 1020 < mouse_loc[0] < 1120 and 615 < mouse_loc[1] < 645:
-                    print("fight button!")
-                if 1020 < mouse_loc[0] < 1100 and 680 < mouse_loc[1] < 710:
+                if 1020 < mouse_loc[0] < 1100 and 640 < mouse_loc[1] < 670:
                     print("run button!")
+                    #break
+                    #pygame.display.quit())
+                    _.type = pygame.QUIT
+                    #sys.exit(0)
+
             if _.type == pygame.QUIT:
                 playing = False
+
+                screen.blit(runTXT, (1030, 650))
 
