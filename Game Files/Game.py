@@ -255,16 +255,16 @@ def runGameScreen(choiceOne, choiceTwo):
             spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
             screen.blit(spongebobVictory, (0, 0))
             winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-            screen.blit(winnerTXT, (420, 354))
+            screen.blit(winnerTXT, (430, 654))
         else:
             spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
             spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
             screen.blit(spongebobVictory, (0, 0))
             winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-            screen.blit(winnerTXT, (420, 354))
+            screen.blit(winnerTXT, (430, 654))
 
         gameOverTXT = bigfont.render('Game over!', False, black)
-        screen.blit(gameOverTXT, (450, 304))
+        screen.blit(gameOverTXT, (490, 604))
 
         pygame.display.update()
 
@@ -291,16 +291,15 @@ def runGameScreen(choiceOne, choiceTwo):
                     print("run button!")
                     #break
                     #pygame.display.quit())
-                    _.type = pygame.QUIT
+                   # _.type = pygame.QUIT
                     #sys.exit(0)
-
+                    blitGameOverScreen()
             if _.type == pygame.QUIT:
                 playing = False
     print("game over!")
-
-    blitGameOverScreen()
-
+    #blitGameOverScreen()
 
 
-                screen.blit(runTXT, (1030, 650))
+
+   #             screen.blit(runTXT, (1030, 650))
 
