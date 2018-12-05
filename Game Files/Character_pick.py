@@ -1,5 +1,6 @@
 import pygame
 from random import randint
+import Game
 
 pygame.display.init()
 pygame.font.init()
@@ -244,6 +245,8 @@ def runCharSelectionScreen():
                 Finalp2 = str(char2)
                 print("player 2 = ", Finalp2)
                 p2 = True
+                if character != char2:
+                    Game.runGameScreen(character, char2)
         elif 8 < mouseLoc[0] < 40 and 8 < mouseLoc[1] < 40:
             print("back button!")
             playing = False
