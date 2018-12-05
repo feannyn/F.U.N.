@@ -18,7 +18,7 @@ class Buff_Type:
 class Debuff_Type:
 	apDecrease, defDecrease, reflect, root, dot = range(5)
 
-#Move Types (Classes as of now; will look into structs when refactoring)
+# Move Types (Classes as of now; will look into structs when refactoring)
 class Offensive(object):
 	def __init__(self, baseDamage, critChance, missChance):
 		self.baseDamage = baseDamage
@@ -78,10 +78,3 @@ plankton = Character('Sheldon Plankton', 25, 10, 500, moves)
 moves = [Move('Play Clarinet', 0, 0, 'Debuff'), Move('Throw Clarinet', 75, 50, 'N'), Move('Squilliam', 0, 0, 'State Change')]
 squid = Character('Squidward Tortellini', 100, 100, 100, moves)
 
-
-
-#larry the lobster
-
-#gary
-
-#doodle bob
