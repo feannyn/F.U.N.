@@ -1,17 +1,20 @@
 import enum;
 
-#tristan was here
+
+# tristan was here
 class Character(object):
-	def __init__(self, name, health, attack, defense, moveSet):
+	def __init__(self, name, health, attack1, attack2, attack3, attack4 , imgFront, imgBack):
 		self.name = name
 		self.health = health
-		self.attack = attack
-		self.defense = defense
-		self.moveSet = moveSet
-		self.status = 'Null'
+		self.attack1 = attack1
+		self.attack2 = attack2
+		self.attack3 = attack3
+		self.attack4 = attack4
+		self.imgFront = imgFront
+		self.imgBack = imgBack
 
-#Enum for buff types
-#There is an enum module for python, but this is a quicker and "pythonic" way of achieving the same effect
+# Enum for buff types
+# There is an enum module for python, but this is a quicker and "pythonic" way of achieving the same effect
 class Buff_Type:
 	apIncrease, defIncrease, hot, inst_heal, brace, crosshairs = range(6)
 
@@ -20,18 +23,7 @@ class Debuff_Type:
 
 #Move Types (Classes as of now; will look into structs when refactoring)
 class Offensive(object):
-<<<<<<< HEAD
-<<<<<<< HEAD
 	def __init__(self, baseDamage, critChance, missChance):
-=======
-		def __init__(self, baseDamage, critChance, missChance):
->>>>>>> 132d714465ee01214837daf4016a8921721fbb0a
-=======
-		def __init__(self, baseDamage, critChance, missChance):
-=======
-	def __init__(self, baseDamage, critChance, missChance):
->>>>>>> master
->>>>>>> Tristan-Testing
 		self.baseDamage = baseDamage
 		self.critChance = critChance
 		self.missChance = missChance
@@ -61,33 +53,33 @@ class Move(object):
 """
 #spongebob
 moves = [Move('Patty Flip', 75, 50, 'Burn'), Move('Jelly Catch', 80, 40, 'Root'), Move('Bubbles', 100, 25, 'Blind'), Move('Inflate Arms', 0, 0, 'State Change')]
-sponge = Character('Spongebob Squarepants', 300, 50, 100, moves)
+# sponge = Character('Spongebob Squarepants', 300, 50, 100, moves)
 
 
 #patrick
 moves = [Move('Replace Brain', 0, 0, 'BuffA'), Move('Fried Oyster Skins', 75, 50, 'Sleep'), Move('Throw Rocky', 9999, 10, 'OTK')]#Patricks moves
-star = Character('Patrick Star',500, 75, 25, moves)
+# star = Character('Patrick Star',500, 75, 25, moves)
 
 
 #sandy
 moves = [Move('Lassooooo', 25, 80, 'Bind'), Move('Alaskan Bull Worm', 9999, 1, 'Area'),Move('Karate Chop', 75, 50, 'N'), Move('Hibernate', 0, 0, 'State Change')]
-squirrel = Character('Sandy Cheeks', 100, 150, 25, moves)
+# squirrel = Character('Sandy Cheeks', 100, 150, 25, moves)
 
 hibernatingSquirrel = 5 #input later
 
 
 #mr krabs
 moves = [Move('Me First Dollar', 80, 50, 'N'), Move('Robo Krabs / Chum Krabs', 0, 0, 'State Change'), Move('Withdraw', 0, 0, 'BuffD')]
-crab = Character('Mr. Krabs', 150, 25, 500, moves)
+# crab = Character('Mr. Krabs', 150, 25, 500, moves)
 
 #plankton
 moves = [Move('Steal Formula', 0, 75, 'Steal Move'), Move('Chum Bot', 0, 0, 'State Change'), Move('Chum Blaster', 75, 50, 'N')]
-plankton = Character('Sheldon Plankton', 25, 10, 500, moves)
+# plankton = Character('Sheldon Plankton', 25, 10, 500, moves)
 
 
 #squidward
 moves = [Move('Play Clarinet', 0, 0, 'Debuff'), Move('Throw Clarinet', 75, 50, 'N'), Move('Squilliam', 0, 0, 'State Change')]
-squid = Character('Squidward Tortellini', 100, 100, 100, moves)
+# squid = Character('Squidward Tortellini', 100, 100, 100, moves)
 
 
 
