@@ -7,6 +7,7 @@ pygame.font.init()
 playing = True
 p1, p2 = False, False
 
+
 def runCharSelectionScreen():
     global p1, p2, playing
     myfont = pygame.font.SysFont('Impact', 32)
@@ -145,7 +146,6 @@ def runCharSelectionScreen():
         gameDisplay.blit(selectP1, (425, 20))
         gameDisplay.blit(back, (10, 10))
         pygame.display.update()
-
 
     pygame.display.update()
 
