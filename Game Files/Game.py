@@ -248,19 +248,69 @@ def runGameScreen(choiceOne, choiceTwo):
     def blitGameOverScreen():
         global winner, playOne, playTwo
         bigfont = pygame.font.Font('Pokemon GB.ttf', 40)
+        spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
+        spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
+        patrickVictory = pygame.image.load("Character Images/patrickVictory.png")
+        patrickVictory = pygame.transform.scale(patrickVictory, (1360, 768))
+        squidwardVictory = pygame.image.load("Character Images/squidwardVictory.png")
+        squidwardVictory = pygame.transform.scale(squidwardVictory, (1360, 768))
+        sandyVictory = pygame.image.load("Character Images/sandyVictory.png")
+        sandyVictory = pygame.transform.scale(sandyVictory, (1360, 768))
+        mrKrabsVictory = pygame.image.load("Character Images/mrKrabsVictory.png")
+        mrKrabsVictory = pygame.transform.scale(mrKrabsVictory, (1360, 768))
+        planktonVictory = pygame.image.load("Character Images/planktonVictory.png")
+        planktonVictory = pygame.transform.scale(planktonVictory, (1360, 768))
 
         if winner == 0:
-            spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
-            spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
-            screen.blit(spongebobVictory, (0, 0))
-            winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-            screen.blit(winnerTXT, (420, 354))
+            if playOne == spongebob:
+                screen.blit(spongebobVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playOne == patrick:
+                screen.blit(patrickVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playOne == squidward:
+                screen.blit(squidwardVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playOne == sandy:
+                screen.blit(sandyVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playOne == mrKrabs:
+                screen.blit(mrKrabsVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playOne == plankton:
+                screen.blit(planktonVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
         else:
-            spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
-            spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
-            screen.blit(spongebobVictory, (0, 0))
-            winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-            screen.blit(winnerTXT, (420, 354))
+            if playTwo == spongebob:
+                screen.blit(spongebobVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playTwo == patrick:
+                screen.blit(patrickVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playTwo == squidward:
+                screen.blit(squidwardVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playTwo == sandy:
+                screen.blit(sandyVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playTwo == mrKrabs:
+                screen.blit(mrKrabsVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
+            elif playTwo == plankton:
+                screen.blit(planktonVictory, (0, 0))
+                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+                screen.blit(winnerTXT, (420, 354))
 
         gameOverTXT = bigfont.render('Game over!', False, black)
         screen.blit(gameOverTXT, (450, 304))
