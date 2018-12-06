@@ -1,6 +1,7 @@
 import pygame
 from Characters import Character
 
+
 curPlayer = 10
 attack1 = 10
 attack2 = 10
@@ -16,7 +17,8 @@ playTwo = 10
 
 # font declaration
 def runGameScreen(choiceOne, choiceTwo):
-    global curPlayer, attack2, attack1, attack3, attack4, pOneHp, pTwoHp, playOne, playTwo
+    global curPlayer, attack2, attack1, attack3, attack4, pOneHp, pTwoHp, playOne, playTwo, winner
+    winner = 0
     pygame.font.init()
     myfont = pygame.font.Font('Pokemon GB.ttf', 19)
     smallerFont = pygame.font.Font('Pokemon GB.ttf', 18)
@@ -140,7 +142,7 @@ def runGameScreen(choiceOne, choiceTwo):
     attack2 = myfont.render(playOne.attack2[0], False, black)
     attack3 = myfont.render(playOne.attack3[0], False, black)
     attack4 = myfont.render(playOne.attack4[0], False, black)
-    fightTXT = myfont.render('FIGHT', False, black)
+    #fightTXT = myfont.render('FIGHT', False, black)
     runTXT = myfont.render('RUN', False, black)
     topDamage = 0
     bottomDamage = 0
@@ -175,7 +177,7 @@ def runGameScreen(choiceOne, choiceTwo):
         screen.blit(nameTwo, (215, 45))
         screen.blit(nameOne, (1120, 450))
         if playOne == patrick:
-            screen.blit(Patback, (90, 325))
+            screen.blit(Patfront, (90, 325))
         elif playOne == sandy:
             screen.blit(Sandyback, (90, 325))
         elif playOne == squidward:
@@ -188,7 +190,7 @@ def runGameScreen(choiceOne, choiceTwo):
             screen.blit(Plankback, (90, 325))
 
         if playTwo == patrick:
-            screen.blit(Patfront, (1000, 25))
+            screen.blit(Patback, (1000, 25))
         elif playTwo == sandy:
             screen.blit(Sandyfront, (1000, 25))
         elif playTwo == squidward:
@@ -199,8 +201,8 @@ def runGameScreen(choiceOne, choiceTwo):
             screen.blit(SBfront, (1000, 25))
         elif playTwo == plankton:
             screen.blit(Plankfront, (1000, 25))
-        screen.blit(fightTXT, (1030, 620))
-        screen.blit(runTXT, (1030, 690))
+        #screen.blit(fightTXT, (1030, 620))
+        screen.blit(runTXT, (1030, 650))
         screen.blit(attack1, (150, 620))
         screen.blit(attack2, (150, 690))
         screen.blit(attack3, (450, 620))
@@ -229,6 +231,10 @@ def runGameScreen(choiceOne, choiceTwo):
             elif attNum == 4:
                 bottomDamage = bottomDamage + curPlayer.attack4[1]
             curPlayer = playOne
+        if topDamage > 100:
+            topDamage = 100
+        if bottomDamage > 100:
+            bottomDamage = 100
         attack1 = myfont.render(curPlayer.attack1[0], False, black)
         attack2 = myfont.render(curPlayer.attack2[0], False, black)
         attack3 = myfont.render(curPlayer.attack3[0], False, black)
@@ -313,7 +319,7 @@ def runGameScreen(choiceOne, choiceTwo):
                 screen.blit(winnerTXT, (420, 354))
 
         gameOverTXT = bigfont.render('Game over!', False, black)
-        screen.blit(gameOverTXT, (450, 304))
+        screen.blit(gameOverTXT, (490, 604))
 
         pygame.display.update()
 
@@ -336,15 +342,23 @@ def runGameScreen(choiceOne, choiceTwo):
                 if 440 < mouse_loc[0] < 605 and 680 < mouse_loc[1] < 710:
                     print("attack4!")
                     playing = swapTurn(4)
-                if 1020 < mouse_loc[0] < 1120 and 615 < mouse_loc[1] < 645:
-                    print("fight button!")
-                if 1020 < mouse_loc[0] < 1100 and 680 < mouse_loc[1] < 710:
+                if 1020 < mouse_loc[0] < 1100 and 640 < mouse_loc[1] < 670:
                     print("run button!")
+                    #break
+                    #pygame.display.quit())
+                   # _.type = pygame.QUIT
+                    #sys.exit(0)
+                    playing = False
+                    if curPlayer == playOne:
+                        winner = 1
+                    else:
+                        winner = 0
+                    blitGameOverScreen()
             if _.type == pygame.QUIT:
                 playing = False
     print("game over!")
-
-    blitGameOverScreen()
-
+    #blitGameOverScreen()
 
 
+
+   #             screen.blit(runTXT, (1030, 650))
