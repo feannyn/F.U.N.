@@ -242,11 +242,13 @@ def runGameScreen(choiceOne, choiceTwo):
         blitGameScreen()
         if topDamage >= 100:
             print("Player One Won")
-            return False
             winner = 0
+            blitGameOverScreen()
+            return False
         elif bottomDamage >= 100:
             print("Player Two Won")
             winner = 1
+            blitGameOverScreen()
             return False
         else:
             return True
