@@ -1,6 +1,6 @@
 import pygame
 from Characters import Character
-
+import time
 
 curPlayer = 10
 attack1 = 10
@@ -18,7 +18,8 @@ playTwo = 10
 # font declaration
 def runGameScreen(choiceOne, choiceTwo):
     global curPlayer, attack2, attack1, attack3, attack4, pOneHp, pTwoHp, playOne, playTwo, winner
-    winner = 0
+    topDamage = 0
+    bottomDamage = 0
     pygame.font.init()
     myfont = pygame.font.Font('Pokemon GB.ttf', 19)
     smallerFont = pygame.font.Font('Pokemon GB.ttf', 18)
@@ -244,17 +245,21 @@ def runGameScreen(choiceOne, choiceTwo):
             print("Player One Won")
             winner = 0
             blitGameOverScreen()
+            time.sleep(6)
             return False
         elif bottomDamage >= 100:
             print("Player Two Won")
             winner = 1
             blitGameOverScreen()
+            time.sleep(6)
             return False
         else:
             return True
 
     def blitGameOverScreen():
-        global winner, playOne, playTwo
+        global winner, playOne, playTwo, topDamage, bottomDamage
+        topDamage = 0
+        bottomDamage = 0
         bigfont = pygame.font.Font('Pokemon GB.ttf', 40)
         spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
         spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
@@ -356,11 +361,20 @@ def runGameScreen(choiceOne, choiceTwo):
                     else:
                         winner = 0
                     blitGameOverScreen()
+                    time.sleep(6)
+                    break
             if _.type == pygame.QUIT:
                 playing = False
     print("game over!")
-    #blitGameOverScreen()
-
-
-
-   #             screen.blit(runTXT, (1030, 650))
+    curPlayer = 10
+    attack1 = 10
+    attack2 = 10
+    attack3 = 10
+    attack4 = 10
+    pOneHp = 10
+    pTwoHp = 10
+    topDamage = 0
+    bottomDamage = 0
+    winner = 0
+    playOne = 10
+    playTwo = 10

@@ -10,6 +10,9 @@ p1, p2 = False, False
 
 def runCharSelectionScreen():
     global p1, p2, playing
+    p1 = False
+    p2 = False
+    playing = True
     myfont = pygame.font.SysFont('Impact', 32)
     # nextfont = pygame.font.SysFont('Impact', 22)
     randFont = pygame.font.SysFont('Brush Script', 24)
@@ -247,6 +250,7 @@ def runCharSelectionScreen():
                 p2 = True
                 if character != char2:
                     Game.runGameScreen(character, char2)
+                    playing = False
         elif 8 < mouseLoc[0] < 40 and 8 < mouseLoc[1] < 40:
             print("back button!")
             playing = False
