@@ -1,6 +1,7 @@
 import pygame
 from Characters import Character
 
+
 curPlayer = 10
 attack1 = 10
 attack2 = 10
@@ -140,7 +141,7 @@ def runGameScreen(choiceOne, choiceTwo):
     attack2 = myfont.render(playOne.attack2[0], False, black)
     attack3 = myfont.render(playOne.attack3[0], False, black)
     attack4 = myfont.render(playOne.attack4[0], False, black)
-    fightTXT = myfont.render('FIGHT', False, black)
+    #fightTXT = myfont.render('FIGHT', False, black)
     runTXT = myfont.render('RUN', False, black)
     topDamage = 0
     bottomDamage = 0
@@ -199,8 +200,8 @@ def runGameScreen(choiceOne, choiceTwo):
             screen.blit(SBfront, (1000, 25))
         elif playTwo == plankton:
             screen.blit(Plankfront, (1000, 25))
-        screen.blit(fightTXT, (1030, 620))
-        screen.blit(runTXT, (1030, 690))
+        #screen.blit(fightTXT, (1030, 620))
+        screen.blit(runTXT, (1030, 650))
         screen.blit(attack1, (150, 620))
         screen.blit(attack2, (150, 690))
         screen.blit(attack3, (450, 620))
@@ -248,72 +249,22 @@ def runGameScreen(choiceOne, choiceTwo):
     def blitGameOverScreen():
         global winner, playOne, playTwo
         bigfont = pygame.font.Font('Pokemon GB.ttf', 40)
-        spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
-        spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
-        patrickVictory = pygame.image.load("Character Images/patrickVictory.png")
-        patrickVictory = pygame.transform.scale(patrickVictory, (1360, 768))
-        squidwardVictory = pygame.image.load("Character Images/squidwardVictory.png")
-        squidwardVictory = pygame.transform.scale(squidwardVictory, (1360, 768))
-        sandyVictory = pygame.image.load("Character Images/sandyVictory.png")
-        sandyVictory = pygame.transform.scale(sandyVictory, (1360, 768))
-        mrKrabsVictory = pygame.image.load("Character Images/mrKrabsVictory.png")
-        mrKrabsVictory = pygame.transform.scale(mrKrabsVictory, (1360, 768))
-        planktonVictory = pygame.image.load("Character Images/planktonVictory.png")
-        planktonVictory = pygame.transform.scale(planktonVictory, (1360, 768))
 
         if winner == 0:
-            if playOne == spongebob:
-                screen.blit(spongebobVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playOne == patrick:
-                screen.blit(patrickVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playOne == squidward:
-                screen.blit(squidwardVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playOne == sandy:
-                screen.blit(sandyVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playOne == mrKrabs:
-                screen.blit(mrKrabsVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playOne == plankton:
-                screen.blit(planktonVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 1 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
+            spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
+            spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
+            screen.blit(spongebobVictory, (0, 0))
+            winnerTXT = bigfont.render('Player 1 Wins!', False, black)
+            screen.blit(winnerTXT, (430, 654))
         else:
-            if playTwo == spongebob:
-                screen.blit(spongebobVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playTwo == patrick:
-                screen.blit(patrickVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playTwo == squidward:
-                screen.blit(squidwardVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playTwo == sandy:
-                screen.blit(sandyVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playTwo == mrKrabs:
-                screen.blit(mrKrabsVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
-            elif playTwo == plankton:
-                screen.blit(planktonVictory, (0, 0))
-                winnerTXT = bigfont.render('Player 2 Wins!', False, black)
-                screen.blit(winnerTXT, (420, 354))
+            spongebobVictory = pygame.image.load("Character Images/spongebobVictory.png")
+            spongebobVictory = pygame.transform.scale(spongebobVictory, (1360, 768))
+            screen.blit(spongebobVictory, (0, 0))
+            winnerTXT = bigfont.render('Player 2 Wins!', False, black)
+            screen.blit(winnerTXT, (430, 654))
 
         gameOverTXT = bigfont.render('Game over!', False, black)
-        screen.blit(gameOverTXT, (450, 304))
+        screen.blit(gameOverTXT, (490, 604))
 
         pygame.display.update()
 
@@ -336,15 +287,18 @@ def runGameScreen(choiceOne, choiceTwo):
                 if 440 < mouse_loc[0] < 605 and 680 < mouse_loc[1] < 710:
                     print("attack4!")
                     playing = swapTurn(4)
-                if 1020 < mouse_loc[0] < 1120 and 615 < mouse_loc[1] < 645:
-                    print("fight button!")
-                if 1020 < mouse_loc[0] < 1100 and 680 < mouse_loc[1] < 710:
+                if 1020 < mouse_loc[0] < 1100 and 640 < mouse_loc[1] < 670:
                     print("run button!")
+                    #break
+                    #pygame.display.quit())
+                   # _.type = pygame.QUIT
+                    #sys.exit(0)
+                    blitGameOverScreen()
             if _.type == pygame.QUIT:
                 playing = False
     print("game over!")
-
-    blitGameOverScreen()
-
+    #blitGameOverScreen()
 
 
+
+   #             screen.blit(runTXT, (1030, 650))
