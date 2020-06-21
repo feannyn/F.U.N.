@@ -5,13 +5,16 @@ import enum;
 class Character(object):
 	def __init__(self, name, health, attack1, attack2, attack3, attack4 , imgFront, imgBack):
 		self.name = name
-		self.health = health
+		self.healtl = health
 		self.attack1 = attack1
 		self.attack2 = attack2
 		self.attack3 = attack3
 		self.attack4 = attack4
 		self.imgFront = imgFront
 		self.imgBack = imgBack
+
+#sdfhskadflasdkhfldksfhalshf
+
 
 # Enum for buff types
 # There is an enum module for python, but this is a quicker and "pythonic" way of achieving the same effect
